@@ -30,9 +30,8 @@ app.get('/callSoap', function(req, res) {
     hello.use(bodyParser());
 
     var barcode = "123";
-    var wsdlUrl = 'http://www.searchupc.com/service/UPCSearch.asmx?wsdl';
-    var wsdlUrl3 = "http://213.58.192.228/cmdbuild/services/soap/Webservices?wsdl";
-
+    var wsdlUrl3 = 'http://www.searchupc.com/service/UPCSearch.asmx?wsdl';
+    
     var username = "yourusername";
     var password = "yourpassword";
 
@@ -45,8 +44,7 @@ app.get('/callSoap', function(req, res) {
   var wsSecurity = new soap.WSSecurity(username, password, options)
    
     soap.createClient(wsdlUrl3, function(err, soapClient){
-      // we now have a soapClient - we also need to make sure there's no `err` here. 
-      
+         
       soapClient.setSecurity(wsSecurity);
         
       if (err){
